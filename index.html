@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <h2>Задание 1</h2>
+    <button class="your_name" onclick="sayHi()">Введите ваше имя</button>
+    <script>
+        function sayHi() {
+            let name = prompt("Введите ваше имя:");
+            alert('Привет, ' + `${name}` + '!');
+        }
+    </script>
+
+    <h2>Задание 2 - Калькулятор</h2>
+    <input id="num1">
+    <input id="num2">
+    <button onclick="sum()">+</button>
+    <script>
+        function sum() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 - (-num2);
+            alert(result);
+        }
+    </script>
+    <button onclick="minus()">-</button>
+    <script>
+        function minus() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 - num2;
+            alert(result);
+        }
+    </script>
+    <button onclick="times()">:</button>
+    <script>
+        function times() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 / num2;
+            alert(result);
+        }
+    </script>
+    <button onclick="divide()">*</button>
+    <script>
+        function divide() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 * num2;
+            alert(result);
+        }
+    </script>
+
+    <!-- <h2>Задание 3</h2>
+    <p>Создайте страницу, подключите скрипт. Создайте функцию, которая выведет сообщение в консоли «Я учу JavaScript!».
+    </p>
+    <script>
+        function showMessage() {
+            alert('Я учу JavaScript!');
+        }
+        showMessage();
+    </script> -->
+
+    <h2>Задание 4</h2>
+    <p>Создайте галерею переключения изображений.</p>
+    <div class="gallery">
+        <img id="pic1" src="image/cat-gallery-photo3.jpg" alt="Кот 1">
+
+        <div class="gallery__button_container">
+            <button class="gallery__button" onclick="pic1.src='image/cat-gallery-photo3.jpg'">Предыдущий</button>
+            <button class="gallery__button" onclick="pic1.src='image/cat-gallery-photo5.jpg'">Следующий</button>
+        </div>
+    </div>
+
+    <h2>*** Задание под звездочкой</h2>
+    <!-- <button class="year" onclick="sayYear()">Введите количество дней в году: </button> -->
+    <p>Введите количество дней в году: </p>
+    <input id="num1">
+    <script>
+        function sayYear() {
+            let yearNumber = Number(document.getElementById('num1').value);
+            let result = yearNumber % 4;
+            if (result == 0) {
+                alert('високосный');
+                if (yearNumber % 100 == 0) {
+                    if (yearNumber % 400 == 0) {
+                        alert('Год является високосным (366 дней)');
+                    }
+                    else alert('Год не високосный (у него 365 дней)');
+                }
+                else alert('Год является високосным (366 дней).');
+            }
+            else { alert('Год не високосный (у него 365 дней)'); }
+
+
+        }
+    </script>
+    <button onclick="sayYear()">Проверить</button>
+</body>
+
+</html>
